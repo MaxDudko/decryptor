@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+  color: #00FF00;
+  font-family: monospace;
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+button {
+  margin: 2vh; 
+}
+input {
+  max-width: 15vh;
+  margin: 2vh;
+  max-height: 4vh;
+}
+input[placeholder] {
+  text-align: center;
+}
+#inputKey {
+  margin-top: 0;
+}
+input:last-child {
+  align-self: center;
+  margin-top: 0;
+}
+form div {
+  display: flex;
+  justify-content: space-between;
+}
+form div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+button, textarea, input, select {
+  min-width: 10vh;
+  background-color: #000000;
+  border-radius: 10px;
+  color: #00FF00;
+  border: 1px solid #00FF00;
+}
+button:hover {
+  background-color: #00FF00;
+  color: #000000;
+  cursor: pointer;
+}
