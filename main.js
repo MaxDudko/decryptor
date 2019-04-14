@@ -1,12 +1,3 @@
-let inputForm = document.querySelector('#inputForm').value;
-
-let inputKey = document.querySelector('#inputKey').value * 1;
-
-let langSelect = document.querySelector('#lang').value;
-
-let crypt = document.querySelector('#crypt');
-let decrypt = document.querySelector('#decrypt');
-
 const enAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 
                     'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 
                     'q', 'r', 's', 't', 'u', 'v', 'w', 
@@ -20,41 +11,51 @@ const ruAlphabet = ['а', 'б', 'в', 'г', 'д',
                     'ш', 'щ', 'ъ', 'ы', 'ь', 
                     'э', 'ю', 'я'];
                     
-//####################################################################
+const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+                    
 function cryptText() {
+    let inputForm = document.querySelector('#inputForm').value;
+    let inputKey = document.querySelector('#inputKey').value * 1;  
+    let langSelect = document.querySelector('#lang').value;
+    
     let langArr;
     let index;
     let result = '';
   
-    if(langSelect == 'enAlphabet') langArr = enAlphabet;
-    if(langSelect == 'ruAlphabet') langArr = ruAlphabet;
-  
     for(let i = 0; i < inputForm.length; i++) {
+        if(enAlphabet.includes(inputForm[i])) langArr = enAlphabet;
+        if(ruAlphabet.includes(inputForm[i])) langArr = ruAlphabet;
+        if(numbers.includes(inputForm[i])) langArr = numbers;
         index = langArr.indexOf(inputForm[i]);
         if(index == -1) {
             result += inputForm[i];
         } else {
-            if(index + inputKey > langArr.length) {
+            if(index + inputKey >= langArr.length) {
                 result += langArr[(index + inputKey) - langArr.length];
             } else {
                 result += langArr[index + inputKey];     
             }
         }
-        console.log(`symbol: ${inputForm[i].toString()} \n number in arr: ${index+1} \n last symbol: ${result[result.length - 1]}`)
     }
+    console.log(result);
     document.querySelector('#outputForm').value = result;
 }
 
-//####################################################################
+
 function decryptText() {
+    let inputForm = document.querySelector('#inputForm').value;
+    let inputKey = document.querySelector('#inputKey').value * 1;  
+    let langSelect = document.querySelector('#lang').value;
+    
     let langArr;
     let index;
     let result = '';
     
-    if(langSelect == 'enAlphabet') langArr = enAlphabet;
-    if(langSelect == 'ruAlphabet') langArr = ruAlphabet;
-    
     for(let i = 0; i < inputForm.length; i++) {
+        if(enAlphabet.includes(inputForm[i])) langArr = enAlphabet;
+        if(ruAlphabet.includes(inputForm[i])) langArr = ruAlphabet;
+        if(numbers.includes(inputForm[i])) langArr = numbers;
         index = langArr.indexOf(inputForm[i]);
         if(index == -1) {
             result += inputForm[i];
@@ -65,8 +66,9 @@ function decryptText() {
                 result += langArr[index - inputKey];     
             }
         }
-        console.log(`symbol: ${inputForm[i].toString()} \n number in arr: ${index+1} \n last symbol: ${result[result.length - 1]}`)
     }
+    console.log(result);
+    document.querySelector('#outputForm').value = result;
 }
 
 
