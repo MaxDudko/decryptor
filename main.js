@@ -40,7 +40,7 @@ function cryptText() {
                 result += langArr[index + inputKey];     
             }
         }
-        console.log(`symbol: ${inputForm[i].toString()} \n number in arr: ${index+1} \n last symbol: ${result[result.length - 1]}`)
+        console.log(`symbol: ${inputForm[i].toString()} \n number in arr: ${index+1} \n last symbol: ${result[result.length - 1]}`);
     }
     document.querySelector('#outputForm').value = result;
 }
