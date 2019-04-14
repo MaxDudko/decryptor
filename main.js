@@ -17,7 +17,6 @@ const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 function cryptText() {
     let inputForm = document.querySelector('#inputForm').value;
     let inputKey = document.querySelector('#inputKey').value * 1;  
-    let langSelect = document.querySelector('#lang').value;
     
     let langArr;
     let index;
@@ -37,10 +36,6 @@ function cryptText() {
                 result += langArr[index + inputKey];     
             }
         }
-<<<<<<< HEAD
-        console.log(`symbol: ${inputForm[i].toString()} \n number in arr: ${index+1} \n last symbol: ${result[result.length - 1]}`);
-=======
->>>>>>> dba7aa0e18aca05e214efbd458374db78d65cea6
     }
     console.log(result);
     document.querySelector('#outputForm').value = result;
@@ -50,7 +45,6 @@ function cryptText() {
 function decryptText() {
     let inputForm = document.querySelector('#inputForm').value;
     let inputKey = document.querySelector('#inputKey').value * 1;  
-    let langSelect = document.querySelector('#lang').value;
     
     let langArr;
     let index;
